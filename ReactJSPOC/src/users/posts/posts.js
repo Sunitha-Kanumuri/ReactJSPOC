@@ -10,7 +10,7 @@ export default class Posts extends Component {
         this.state = { posts: [], userId: 0 };
     }
 
-    componentDidMount() {
+    componentDidMount=()=> {
         let str = this.props.location.pathname.toString();
         const userId = str.substring(str.lastIndexOf("/") + 1, str.length);
         this.state.userId = userId;
@@ -18,7 +18,7 @@ export default class Posts extends Component {
     }
 
     getPosts = () => {
-        axios.get(`https://jsonplaceholder.typicode.com/users/` + this.state.userId + `/posts`).then(res => {
+        axios.get(`https://jsonplaceholder.typicode.com/users/${this.state.userId}/posts`).then(res => {
             const posts = res.data;
             this.setState({ posts });
         });

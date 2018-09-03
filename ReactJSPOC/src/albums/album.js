@@ -14,7 +14,7 @@ export default class Album extends Component {
     }
 
     getComments() {
-        axios.get(`https://jsonplaceholder.typicode.com/albums/` + this.state.albumId + `/photos`).then(res => {
+        axios.get(`https://jsonplaceholder.typicode.com/albums/${this.state.albumId}/photos`).then(res => {
             const photos = res.data;
             this.setState({ photos });
         });
@@ -26,11 +26,7 @@ export default class Album extends Component {
                     <h1 style={{ cursor: "pointer" }} onClick={() => this.onBtnClick(this.props.id)}>{this.props.title}</h1>
                 </div>
                 <div style={{ margin: "10px" }}>
-                    {this.state.photos.length===0 ? (
-                        <span></span>
-                    ) : (
-                        <h4>Photos:</h4>
-                        )}
+                {this.state.photos.length >0 && <h4>Photos:</h4>}
                 </div>
                 <div>
                     {this.state.photos && this.state.photos.map((photo, index) => {

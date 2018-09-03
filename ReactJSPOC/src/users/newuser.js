@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './newuser.css'
 
-export default class Form extends Component {
+export default class NewUser extends Component {
     static propTypes = {
         name: PropTypes.string.isrequired,
         email: PropTypes.string.isrequired,

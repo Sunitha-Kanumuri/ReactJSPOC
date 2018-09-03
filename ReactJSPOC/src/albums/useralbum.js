@@ -29,11 +29,7 @@ export default class UserAlbum extends Component {
                     </h1>
                 </div>
                 <div>
-                    {this.state.albums.length===0 ? (
-                        <span></span>
-                        ) : (
-                        <h4>Albums:</h4>
-                    )}
+                    {this.state.albums.length>0 &&<h4>Albums:</h4>}
                 </div>
                 <div>
                     {this.state.albums && this.state.albums.map((album, index) => {

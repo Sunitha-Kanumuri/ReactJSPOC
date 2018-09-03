@@ -29,11 +29,7 @@ export default class Post extends Component {
                     <p>{this.props.body}</p>
                 </div>
                 <div>
-                    {this.state.comments.length===0 ? (
-                        <span></span>
-                        ) : (
-                        <h4>Comments:</h4>
-                    )}
+                    {this.state.comments.length>0 &&<h4>Comments:</h4>}
                 </div>
                 <div>
                     {this.state.comments.length!==0 && this.state.comments.map((comment, index) => {
